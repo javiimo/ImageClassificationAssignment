@@ -4,22 +4,18 @@ import numpy as np
 
 class MEMO(nn.Module):
 
-    def __init__(self, model: nn.Module, transformations, device, num_augmentations, preprocess=None):
+    def __init__(self, model: nn.Module, transformations, device, num_augmentations):
         super().__init__()
         self.model = model
         self.device = device
         self.transformations = transformations
         self.num_augmentations = num_augmentations
-        if preprocess:
-            self.preprocess = lambda x: preprocess(x).unsqueeze(0).to(self.device)
-        else:
-            self.preprocess = id
 
     def augment_image(self, image):
         torch.manual_seed(33)
-        augmented_images = [ self.preprocess(image) ]
+        augmented_images = [ image ]
         for _ in range(self.num_augmentations):
-            augmented_images.append(self.preprocess(self.transformations(image)))
+            augmented_images.append(self.transformations(image))
         return torch.vstack(augmented_images)
     
     def marginal_entropy(self, logits):
@@ -55,7 +51,9 @@ class MEMO(nn.Module):
     def forward(self, image):
         self.model.train()
         images = self.augment_image(image)
-        image_features = self.model(images)
+        preds = self.model(images)
+        avg_preds = preds.mean(axis=0)
+        return avg_preds
 
         #######################################
         #original_params = {name: param.clone() for name, param in self.model.named_parameters()}

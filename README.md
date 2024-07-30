@@ -24,27 +24,26 @@ To convert the Jupyter Notebook into a static HTML file, follow these steps:
    pip install nbconvert==6.4.5
    ```
 
-2. **Modify Notebook Metadata**: Before converting, you need to modify the metadata of `Project_simplified.ipynb` to include the following necessary fields:
+2. **Modify Notebook Tags**: Add the `hide-input` tag to every cell in which we only want the output to be shown.
+
+3. **Modify Notebook Metadata**: Before converting, you need to modify the metadata of `Project_simplified.ipynb` to include the following necessary fields:
 
    ```json
     {
     "metadata": {
+      ...
         "celltoolbar": "Tags",
-        "kernelspec": {
-        "display_name": "Python 3",
-        "name": "python3"
+        "hide_input": {
+            "hide_input": true
         },
-        "language_info": {
-        "name": "python",
-        "version": "3.10.14"
-        }
+        ...
     },
     "nbformat": 4,
     "nbformat_minor": 5
     }
    ```
 
-3. **Run the Conversion Command**: Execute the following command in your terminal to convert the notebook to HTML:
+4. **Run the Conversion Command**: Execute the following command in your terminal to convert the notebook to HTML:
 
    ```bash
    jupyter nbconvert --config nbconvert_config.py Project_simplified.ipynb

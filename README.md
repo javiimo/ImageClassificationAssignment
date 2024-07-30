@@ -1,5 +1,5 @@
 # Image Classification with Test-Time Adaptation Project
-
+The link to the html is: [https://javiimo.github.io/ImageClassificationAssignment/](https://javiimo.github.io/ImageClassificationAssignment/)
 ### Project Overview
 
 "*Test Time Adaptation*" (TTA) refers to a technique in AI where a model is adapted or fine-tuned at the time of inference, using the data it is currently processing.

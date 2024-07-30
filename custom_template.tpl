@@ -15,7 +15,7 @@
             position: fixed; 
             top: 10px; 
             right: 10px; 
-            width: 250px; 
+            width: 300px; 
             max-height: 90%; 
             overflow-y: auto; 
             background: #f9f9f9; 

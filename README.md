@@ -1,5 +1,7 @@
 # HTML Conversion README
 
+The link to the html is [https://javiimo.github.io/ImageClassificationAssignment/](https://javiimo.github.io/ImageClassificationAssignment/)
+
 ## Purpose
 
 The `html_conversion` branch aims to transform a simplified version of a Jupyter Notebook into a static HTML file. This is accomplished using the `nbconvert` tool, which allows us to generate HTML documents from Jupyter Notebooks. The resulting HTML file features collapsible hierarchical sections and a floating collapsible index.

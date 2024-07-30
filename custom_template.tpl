@@ -8,6 +8,9 @@
         {# Prevents None from being rendered #}
     {%- endif -%}
     <style>
+        body {
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
         .toc { 
             position: fixed; 
             top: 10px; 
@@ -66,6 +69,10 @@
         }
         .section {
             margin-left: 20px;
+        }
+        #notebook-container {
+            max-width: 100vw; /* Ensure content fits within viewport width */
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
     </style>
 {% endblock header %}

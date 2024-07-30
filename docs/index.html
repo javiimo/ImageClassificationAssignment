@@ -14572,6 +14572,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
     init_mathjax();
     </script>
     <!-- End of mathjax configuration --></head><style>
+        body {
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
         .toc { 
             position: fixed; 
             top: 10px; 
@@ -14630,6 +14633,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
         }
         .section {
             margin-left: 20px;
+        }
+        #notebook-container {
+            max-width: 100vw; /* Ensure content fits within viewport width */
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
     </style>
 

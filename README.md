@@ -1,56 +1,54 @@
-# Image Classification with Test-Time Adaptation Project
+# HTML Conversion README
 
-### Project Overview
+## Purpose
 
-"*Test Time Adaptation*" (TTA) refers to a technique in AI where a model is adapted or fine-tuned at the time of inference, using the data it is currently processing.
-The target of TTA techniques is to improve model's performance over new or unseen data. In other words, improving the effectiveness when test samples are sampled from a distribution different from the training set one. This latter phenomenon is called  *domain shift*.
+The `html_conversion` branch aims to transform a simplified version of a Jupyter Notebook into a static HTML file. This is accomplished using the `nbconvert` tool, which allows us to generate HTML documents from Jupyter Notebooks. The resulting HTML file features collapsible hierarchical sections and a floating collapsible index.
 
-The purpose of this work is to implement known methods to mitigate the domain shift problem via TTA, and to suggest new approaches.
+## Project Files
 
-The model used is CLIP ViT-B/32, and the test dataset is ImageNet-A.
+This repository contains the following key files:
 
-The strategies implemented are:
+- **Project_simplified.ipynb**: This is the Jupyter Notebook that contains the content to be converted into HTML. It has been simplified to include only relevant code for the methods, static plots and results.
 
-1. Marginal Entropy Minimization with One test point (MEMO)
-2. Contrastive Prompt Tuning (CoOp) with Test-time Prompt Tuning (TPT)
-3. Candidates Boosting (CB)
-4. Descriptive labeling, Generalized similarities, Adaptive temperature (DGA)
+- **nbconvert_config.py**: This configuration file customizes the behavior of `nbconvert` during the conversion process. 
 
-Where the first 2 points are based on existing papers, the latter ones are of our own.
+- **custom_template.tpl**: This file defines a custom template for the HTML output. It allows for further customization of the appearance and structure of the generated HTML document, including the layout of collapsible sections and the floating index.
 
-Furthermore, we will explore the integration of monocular depth estimation, utilizing the Depth Anything model, into our image classification pipeline to try to enhance performance.
+## How to Use
 
-### The Team
+To convert the Jupyter Notebook into a static HTML file, follow these steps:
 
-This project is conducted under the supervision of Dr. Elisa Ricci and Dr. Francesco Tonini. Our team comprises:
+1. **Install Required Packages**: We used an older version of the library to avoid some dependency issues. You can do this by running:
 
-- Pietro Begotti
-- Javier Montané Ortuño 
+   ```bash
+   pip install nbconvert==6.4.5
+   ```
 
-# Repository File Structure
+2. **Modify Notebook Metadata**: Before converting, you need to modify the metadata of `Project_simplified.ipynb` to include the following necessary fields:
 
-- The main file is the Jupyter Notebook Project.ipynb which contains all the cells with the implementations, some theory, tests, plots of the results and conclusions.
+   ```json
+    {
+    "metadata": {
+        "celltoolbar": "Tags",
+        "kernelspec": {
+        "display_name": "Python 3",
+        "name": "python3"
+        },
+        "language_info": {
+        "name": "python",
+        "version": "3.10.14"
+        }
+    },
+    "nbformat": 4,
+    "nbformat_minor": 5
+    }
+   ```
 
-- The .json files contain the results of each method on each image of the dataset and allow to plot the results without having to rerun the tests.
+3. **Run the Conversion Command**: Execute the following command in your terminal to convert the notebook to HTML:
 
-- The rest of the files are needed for some cells to run and are part of the code implementation:
-    - model.pth.tar contains the pretrained CoOp weights
-    - List_ClassNames_imageneta.txt is used to map the ids of the classes to their string names
+   ```bash
+   jupyter nbconvert --config nbconvert_config.py Project_simplified.ipynb
+   ```
 
-# Important Notice
-
-The AWS resources are no longer available, impacting dataset accessibility. Modifications to that part of the code will be necessary to load it, and also apply to plots displaying specific images.
-
-# References
-
-1. Radford, A., Kim, J. W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., ... & Sutskever, I. (2021). [Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/abs/2103.00020). *arXiv preprint arXiv:2103.00020*.
-
-2. Wang, H., Ge, S., Xing, E. P., & Lipton, Z. C. (2021). [MEMO: Test Time Robustness via Adaptation and Augmentation](https://arxiv.org/pdf/2110.09506). *arXiv preprint arXiv:2110.09506*.
-
-3. Shu, Y., Wang, W., Bai, S., & Wang, H. (2022). [Test-Time Prompt Tuning for Zero-Shot Generalization in Vision-Language Models](https://arxiv.org/pdf/2209.07511). *arXiv preprint arXiv:2209.07511*.
-
-4. Yang, L., Kang, B., Li, X., Zhao, F., Zhang, J., Xiao, B., & Song, L. (2024). [Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data](https://arxiv.org/abs/2401.10891). *arXiv preprint arXiv:2401.10891*.
-   
-   [GitHub Repository](https://github.com/LiheYoung/Depth-Anything)
-
-5. Zhou, K., Yang, J., Loy, C. C., & Liu, Z. (2021). [Learning to Prompt for Vision-Language Models](https://arxiv.org/abs/2109.01134). *arXiv preprint arXiv:2109.01134*.
+After running this command, you will find the generated HTML file in the same directory as the original notebook, ready for viewing and sharing. 
+> **Note:** If a "None" string appears at the top of the document, you can remove it manually from the .html file by simply deleting it at the beginning.

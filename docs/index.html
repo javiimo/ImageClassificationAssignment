@@ -16485,22 +16485,19 @@ $$ \tilde{p}_p(y | X_{\text{test}}) = \frac{1}{\rho N} \sum_{i=1}^N 𝟙[H(p_i) 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">base_clip</span> <span class="o">=</span> <span class="n">clip_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">preprocess</span><span class="p">,</span> <span class="n">dataset_classes</span> <span class="o">=</span> <span class="n">imageneta</span><span class="o">.</span><span class="n">class_names</span><span class="p">)</span>
-<span class="n">testing</span><span class="p">(</span><span class="n">imageneta</span><span class="p">,</span> <span class="n">base_clip</span><span class="p">,</span> <span class="n">resultsfilename</span> <span class="o">=</span> <span class="s2">&quot;CLIP_Base_results.json&quot;</span><span class="p">)</span>
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>CLIP</p>
 
-     </div>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_hide-input">
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16539,23 +16536,19 @@ Average confidence across all predictions: 0.46
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">memo</span> <span class="o">=</span> <span class="n">MEMO_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">preprocess</span><span class="p">,</span> <span class="n">dataset_classes</span> <span class="o">=</span> <span class="n">imageneta</span><span class="o">.</span><span class="n">class_names</span><span class="p">,</span>
-                  <span class="n">optimizer</span> <span class="o">=</span> <span class="s1">&#39;SGD&#39;</span><span class="p">,</span> <span class="n">num_augmentations</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">lr</span> <span class="o">=</span> <span class="mf">1e-5</span><span class="p">)</span>
-<span class="n">testing</span><span class="p">(</span><span class="n">imageneta</span><span class="p">,</span> <span class="n">memo</span><span class="p">,</span> <span class="n">resultsfilename</span> <span class="o">=</span> <span class="s2">&quot;MEMO_results.json&quot;</span><span class="p">)</span>
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>MEMO</p>
 
-     </div>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_hide-input">
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16594,23 +16587,19 @@ Average confidence across all predictions: 0.50
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cb</span> <span class="o">=</span> <span class="n">cb_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">preprocess</span><span class="p">,</span> <span class="n">dataset_classes</span> <span class="o">=</span> <span class="n">imageneta</span><span class="o">.</span><span class="n">class_names</span><span class="p">,</span>
-              <span class="n">num_augmentations</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">num_pick_augmenations</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="n">num_candidates</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">max_iter</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span> <span class="n">adaptive_temp</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-<span class="n">testing</span><span class="p">(</span><span class="n">imageneta</span><span class="p">,</span> <span class="n">cb</span><span class="p">,</span> <span class="n">resultsfilename</span> <span class="o">=</span> <span class="s2">&quot;CB_results.json&quot;</span><span class="p">)</span>
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>CB</p>
 
-     </div>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_hide-input">
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16649,23 +16638,19 @@ Average confidence across all predictions: 0.55
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dga</span> <span class="o">=</span> <span class="n">DGA_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">preprocess</span><span class="p">,</span> <span class="n">dataset_classes</span> <span class="o">=</span> <span class="n">imageneta</span><span class="o">.</span><span class="n">class_names</span><span class="p">,</span>
-                <span class="n">num_candidates</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">num_synonyms</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">adaptive_temp</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-<span class="n">testing</span><span class="p">(</span><span class="n">imageneta</span><span class="p">,</span> <span class="n">dga</span><span class="p">,</span> <span class="n">resultsfilename</span> <span class="o">=</span> <span class="s2">&quot;DGA_results.json&quot;</span><span class="p">)</span>
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>DGA</p>
 
-     </div>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_hide-input">
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16705,22 +16690,19 @@ Average confidence across all predictions: 0.56
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">coop</span> <span class="o">=</span> <span class="n">CoOp_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">preprocess</span><span class="p">,</span> <span class="n">imageneta</span><span class="o">.</span><span class="n">class_names</span><span class="p">,</span> <span class="n">class_token_position</span><span class="o">=</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="n">csc</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">testing</span><span class="p">(</span><span class="n">imageneta</span><span class="p">,</span> <span class="n">coop</span><span class="p">,</span> <span class="n">resultsfilename</span> <span class="o">=</span> <span class="s2">&quot;CoOp_results.json&quot;</span><span class="p">)</span>
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>CoOp</p>
 
-     </div>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_hide-input">
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16771,23 +16753,19 @@ Average confidence across all predictions: 0.53
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tpt</span> <span class="o">=</span> <span class="n">TPT_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">preprocess</span><span class="p">,</span> <span class="n">imageneta</span><span class="o">.</span><span class="n">class_names</span><span class="p">,</span> <span class="n">class_token_position</span><span class="o">=</span><span class="s1">&#39;end&#39;</span><span class="p">,</span>
-                <span class="n">optimizer</span> <span class="o">=</span> <span class="s1">&#39;Adam&#39;</span><span class="p">,</span> <span class="n">num_augmentations</span> <span class="o">=</span> <span class="mi">16</span><span class="p">,</span> <span class="n">lr</span> <span class="o">=</span> <span class="mf">1e-5</span><span class="p">)</span>
-<span class="n">testing</span><span class="p">(</span><span class="n">imageneta</span><span class="p">,</span> <span class="n">tpt</span><span class="p">,</span> <span class="n">resultsfilename</span> <span class="o">=</span> <span class="s2">&quot;TPT_results.json&quot;</span><span class="p">)</span>
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>TPT</p>
 
-     </div>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_hide-input">
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
@@ -16867,7 +16845,8 @@ Average confidence across all predictions: 0.52
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="3.1.1-CLIP">3.1.1 CLIP<a class="anchor-link" href="#3.1.1-CLIP">&#182;</a></h3>
+<p>CLIP</p>
+
 </div>
 </div>
 </div>
@@ -16912,7 +16891,8 @@ Global Average Probability of True Label: 0.4575
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="3.1.2-MEMO">3.1.2 MEMO<a class="anchor-link" href="#3.1.2-MEMO">&#182;</a></h3>
+<p>MEMO</p>
+
 </div>
 </div>
 </div>
@@ -16957,7 +16937,8 @@ Global Average Probability of True Label: 0.4996
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="3.1.3-CB">3.1.3 CB<a class="anchor-link" href="#3.1.3-CB">&#182;</a></h3>
+<p>CB</p>
+
 </div>
 </div>
 </div>
@@ -17002,7 +16983,8 @@ Global Average Probability of True Label: 0.5482
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="3.1.4-DGA">3.1.4 DGA<a class="anchor-link" href="#3.1.4-DGA">&#182;</a></h3>
+<p>DGA</p>
+
 </div>
 </div>
 </div>
@@ -17047,7 +17029,8 @@ Global Average Probability of True Label: 0.5588
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="3.1.5-CoOp">3.1.5 CoOp<a class="anchor-link" href="#3.1.5-CoOp">&#182;</a></h3>
+<p>CoOp</p>
+
 </div>
 </div>
 </div>
@@ -17092,7 +17075,8 @@ Global Average Probability of True Label: 0.5288
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="3.1.6-CoOp-+-TPT">3.1.6 CoOp + TPT<a class="anchor-link" href="#3.1.6-CoOp-+-TPT">&#182;</a></h3>
+<p>CoOp + TPT</p>
+
 </div>
 </div>
 </div>
@@ -17774,21 +17758,7 @@ Pipeline. Solid line: flow of labeled images, dotted line: unlabeled images. In 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">testing_depth</span><span class="p">(</span><span class="n">imageneta</span><span class="p">,</span> <span class="n">base_clip</span><span class="p">,</span> <span class="n">depth_model</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">num_zones</span><span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">exp</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">disagree_filter</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">acc</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">save_results</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell    celltag_hide-input">
 
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
